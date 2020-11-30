@@ -5,8 +5,7 @@ Author : @alexr4 https://arivaux.com/2016/
 ## Objectif du cours
 L'accès, la consultation et l'utilisation des données font aujourd'hui partie intégrante de la société et ses enjeux. Que ce soit améliorer un service, archiver des informations, ou les analyser ; les données sont désormais une composante indispensable des métiers du design qui cherchent à les comprendre et a en dessiner les patterns. Avec celles-ci vient la visualisation de donnée, du simple bar chart aux visualisations non-triviales, elles permettent une approche et une étude de ces données par la mise en place et l'utilisation d'un langage graphique dédié.
 
-Ce cours à pour objectif d'explorer et comprendre ce qu'est le domaine de data visualisation, tant dans le fond que dans sa forme. 
-Par une approche à la fois conceptuel et technique, nous apprendrons les grand principes de la data visualisation ainsi que sa production.
+Ce cours a pour objectif d'explorer et comprendre ce qu'est le domaine de data visualisation, tant dans le fond que dans sa forme. Par une approche à la fois conceptuel et technique, nous apprendrons les grands principes de la data visualisation ainsi que sa production.
 
 ## Thématiques et sections
 Ce cours sera divisé en plusieurs en sessions pour un total de 62h et abordera les sujets suivant : 
@@ -55,7 +54,7 @@ Chaque cours pourra être théorique et/ou pratique. Nous y aborderont des sujet
 * Raconter une histoire à l'aide d'un dataset Part.2
 * * Exercice : Réaliser une datavisualisation à 1 niveau à partir du data set de votre choix.
 
-## To be Defines
+## To be Defined
 - E : Data format : CSV, XLS, XML, JSON
 - E : Semio : Utilisation des outils tel que Mirador, Kepler, excel
 - E : Data : introduction à Processing (Java)
