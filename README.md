@@ -156,7 +156,7 @@ Votre dataviz présentera le dataset sous la 2 formes graphiques différentes de
 Vous choisirez les données que vous souhaitez tracker en vous inspirant de différents projets artistique ou sociaux tel que ceux de Lauren McCarthy ou OpenLittermap.
 Votre interface devra être simplue d'utilisation à destination du desktop ou du mobile (selon votre choix) ou completement responsive.*
 
-### Exercice 1 ** 26 Mar. 2021**
+### Exercice 2 ** 26 Mar. 2021**
 *À partir de l'exercice précédent, des critique faites en cours, et des connaissances acquises ce jour ; imaginez une application de capture et visualisation de données. Cette application devra permettre à l'utilisateur de capturer des données et les enregistrer dans un BDD et d'en voir une visualisation complète. Vous pourrez partir des données captées lors de l'exercice précédent ou partir d'un nouveau modèle.
 Vous choisirez les données que vous souhaitez tracker en vous inspirant de différents projets artistique ou sociaux tel que ceux de Lauren McCarthy ou OpenLittermap.
 Votre interface devra être simplue d'utilisation à destination du desktop ou du mobile (selon votre choix) ou completement responsive.*
