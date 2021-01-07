@@ -81,7 +81,7 @@ Chaque cours pourra être théorique et/ou pratique. Nous y aborderont des sujet
 *À partir des connaissances jusque là acquises, réaliser votre propre cartographie des données issues de la nasa MeteorLanding.
 Votre cartographie pourra être 2D ou 3D. Elle pourra présenter une ou plusieurs information par data. Elle pourra être animée ou statique.*
 
-#### Présentation des travaux et critiques **12 Jan. 2021**
+#### Présentation des travaux et critiques __12 Jan. 2021__
 
 ### Grapher des data
 #### Programme : 
