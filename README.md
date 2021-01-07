@@ -99,7 +99,7 @@ Votre cartographie pourra être 2D ou 3D. Elle pourra présenter une ou plusieur
 *À partir de l'exercice précédent, des critique faites en cours, et des connaissances acquises ce jour ; designer et réaliser une page présentant l'ensemble des données meteorLanding issues de la Nasa.
 Votre page devra présenter les données sur une carte ainsi que 4 graphiques différents. Vous définirez les graphs à réaliser à partir de votre analyse de données afin d'en définir leur pertinence. Vous pourrez orienter votre travail autour de différents axe tel que le temps, la composition, la pertinence des données, les données manquantes...*
 
-#### Présentation des travaux et critiques **28 Jan. 2021**
+#### Présentation des travaux et critiques __28 Jan. 2021__
 
 ### Les données libres : Open Data API
 #### Programme : 
@@ -126,7 +126,7 @@ Votre page devra présenter les données sur une carte ainsi que 4 graphiques di
 *À partir des connaissances acquises ce jour ; designer et réaliser une datavisualisation à partir d'un des dataset disponible sur le portail OpenData.Paris.
 Votre dataviz présentera le dataset sous la 2 formes graphiques différentes de votre choix qui formeront un discours complet sur le dataset.*
 
-#### Présentation des travaux et critiques **12 Fev. 2021**
+#### Présentation des travaux et critiques __12 Fev. 2021__
 
 ### Data côté server : NODE JS
 #### Programme : 
@@ -151,17 +151,17 @@ Votre dataviz présentera le dataset sous la 2 formes graphiques différentes de
 * 26 Mar. 2021 AM
 * 26 Mar. 2021 PM
 
-### Exercice 1 ** 12 Fev. 2021**
+### Exercice 1 __12 Fev. 2021__
 *À partir des connaissances acquises, imaginez une application de capture de données. Cette application devra permettre à l'utilisateur de capturer des données et les enregistrer dans un BDD.
 Vous choisirez les données que vous souhaitez tracker en vous inspirant de différents projets artistique ou sociaux tel que ceux de Lauren McCarthy ou OpenLittermap.
 Votre interface devra être simplue d'utilisation à destination du desktop ou du mobile (selon votre choix) ou completement responsive.*
 
-### Exercice 2 ** 26 Mar. 2021**
+### Exercice 2 __26 Mar. 2021__
 *À partir de l'exercice précédent, des critique faites en cours, et des connaissances acquises ce jour ; imaginez une application de capture et visualisation de données. Cette application devra permettre à l'utilisateur de capturer des données et les enregistrer dans un BDD et d'en voir une visualisation complète. Vous pourrez partir des données captées lors de l'exercice précédent ou partir d'un nouveau modèle.
 Vous choisirez les données que vous souhaitez tracker en vous inspirant de différents projets artistique ou sociaux tel que ceux de Lauren McCarthy ou OpenLittermap.
 Votre interface devra être simplue d'utilisation à destination du desktop ou du mobile (selon votre choix) ou completement responsive.*
 
-#### Présentation des travaux et critiques **07 Mai 2021
+#### Présentation des travaux et critiques __07 Mai 2021__
 
 ### Introduction à la data art
 #### Programme :
@@ -180,7 +180,7 @@ Votre interface devra être simplue d'utilisation à destination du desktop ou d
 Votre projet pourra se baser sur des API déja manipulé ou de nouvelles. Vous pourrez également repartir des données que vous aviez tracké lors des cours précédents.
 Votre projet devra se focaliser sur l'aspect graphique de la donnée et non sa compréhension. Vous apporterez un soin particulier au design*
 
-#### Présentation des travaux et critiques **19 Mai 2021**
+#### Présentation des travaux et critiques __19 Mai 2021__
 
 ### Projet Long
 #### Sujet :
@@ -222,9 +222,11 @@ Vous récupérerez des données auprès de divers utilisateur afin de créer vot
 * http://api.bnf.fr/api-document-de-gallica
 * https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson
 * https://github.com/ExpDev07/coronavirus-tracker-api
+* https://www.data.gouv.fr/fr/
 
 ### Programmation
 * https://github.com/alexr4/DI-DataArt
 * https://github.com/alexr4/2019-4DI-DataArt
 * https://github.com/owid/covid-19-data/tree/master/public/data
-* https://github.com/robinparmar/processing_covid19 -->
+* https://github.com/robinparmar/processing_covid19
+* https://thecodingtrain.com/Courses/data-and-apis/
