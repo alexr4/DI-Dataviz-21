@@ -32,6 +32,7 @@ Chaque cours pourra être théorique et/ou pratique. Nous y aborderont des sujet
 * De la Data Viz. à la Data Art (exemples et références)
 
 #### Objectifs :
+
 * Découvrir ce qu'est la datavisualisation et son utilisation dans différents domaines
 
 #### Sessions :
