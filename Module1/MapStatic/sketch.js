@@ -19,7 +19,7 @@ let maxTone, v;
 
 function preload() {
     worldmap = loadImage('../../Asset/WorldMap.png');
-    data = loadTable('../../Dataset/MeteorStrikesDataSet.csv', 'csv', 'header');
+    data = loadTable('../../Dataset/Meteorite_Landings.csv', 'csv', 'header');
 }
 
 function setup() {
@@ -56,12 +56,12 @@ function draw() {
     rectMode(CENTER);
 
     for (let row = 0; row < data.getRowCount(); row++) { 
-        let date    = data.getString(row, 1);
+        let date    = data.getString(row, 5);
         if(date < timeline.value() || date == undefined){
             let mass    = data.getString(row, 2);
-            let long    = data.getString(row, 3);
-            let lat     = data.getString(row, 4);
-            let fell    = (data.getString(row, 5) === 'Fell') ? true : false;
+            let long    = data.getString(row, 7);
+            let lat     = data.getString(row, 6);
+            let fell    = (data.getString(row, 3) === 'Fell') ? true : false;
 
             let x       = map(long, -180, 180, 0, width);
             let y       = map(lat, 90, -90, 0, height);
@@ -86,12 +86,12 @@ function draw() {
 
     //draw text
     for (let row = 0; row < data.getRowCount(); row++) { 
-        let date    = data.getString(row, 1);
+        let date    = data.getString(row, 5);
         if(date < timeline.value() || date == undefined){
             let place   = data.getString(row, 0);
             let mass    = data.getString(row, 2);
-            let long    = data.getString(row, 3);
-            let lat     = data.getString(row, 4);
+            let long    = data.getString(row, 7);
+            let lat     = data.getString(row, 6);
 
             let x       = map(long, -180, 180, 0, width);
             let y       = map(lat, 90, -90, 0, height);

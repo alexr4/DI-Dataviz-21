@@ -30,7 +30,7 @@ let timeline, timelineLabel;
 let maxTone, v;
 
 function preload() {
-    data = loadTable('../../Dataset/MeteorStrikesDataSet.csv', 'csv', 'header');
+    data = loadTable('../../Dataset/Meteorite_Landings.csv', 'csv', 'header');
 }
 
 function setup() {
@@ -71,18 +71,18 @@ function drawDataviz() {
     rectMode(CENTER);
 
     for (let row = 0; row < data.getRowCount(); row++) { 
-        let date    = data.getString(row, 1);
+        let date    = data.getString(row, 5);
         if(date < timeline.value() || date == undefined){
             
-            const long  = Number(data.getString(row, 3));
-            const lat   = Number(data.getString(row, 4));
+            const long  = Number(data.getString(row, 7));
+            const lat   = Number(data.getString(row, 6));
             if(myMap.map.getBounds().contains({lat: lat, lng: long})){
             
                 const pos   = myMap.latLngToPixel(lat, long);
                 
                 let place   = data.getString(row, 0);
                 let mass    = data.getString(row, 2);
-                let fell    = (data.getString(row, 5) === 'Fell') ? true : false;
+                let fell    = (data.getString(row, 3) === 'Fell') ? true : false;
 
                 let rad     = sqrt(mass) / PI;
                 rad         *= 0.025;

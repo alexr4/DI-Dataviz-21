@@ -87,14 +87,15 @@ function BarGraph(){
                 backgroundColor: 'rgb(92, 57, 126)',
                 hoverBackgroundColor : '#ba73ff',
                 borderWidth: 0,
-                barThickness: 3,
+                barThickness: 4,
+                minBarLength : 4,
                 data: yearCount
             }]
         },
 
         // Configuration options go here
         options: {
-            responsive: true
+            responsive: false
         }
     });
 }
