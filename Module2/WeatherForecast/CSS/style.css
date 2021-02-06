@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Sintony:wght@400;700&display=swap');
+
+body{
+    font-size: 16px;
+    font-family: 'Sintony', sans-serif;
+    text-transform: uppercase;
+    background-color: rgb(245, 245, 245);
+}
+
+.container{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.element{
+    width: 50%;
+}
+
+.element:before {
+    content:'';
+    float:left;
+    padding-bottom:100%;
+}
+
+.widget{
+    /* height: 80%;
+    padding: 10%; */
+    height: 100%;
+}
+.widget-inner{
+    margin: 2em;
+}
+
+#Maintitle{
+    flex: 1;
+}
+
+#title-flex{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#title{
+    position: absolute;
+    z-index: 1;
+}
+
+canvas{
+    position: absolute;
+    /* padding: -5% 0 0 -5%; */
+} 
+
+h1{
+    font-size: 5em;
+    font-weight: bolder;
+    margin-left: -.08em;
+    margin-top: -0.25em;
+}
+
+h2{
+    font-size: 2em;
+}
+
+h3{
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+#timeline{
+    flex: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+#endDay{
+    text-align: right;
+}
+
+.place{
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+}
+
+.forecast{
+    /* background-color: blueviolet; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.right,
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#ulDates li,
+#ulForecast li{
+    margin-top: 1.5em;
+}
+
+#weather{
+    text-align: right;
+}
+.sunrisesSunsets{
+    /* background-color: brown; */
+}
+
+.temperatures{
+    background-color: #CEE8F5;
+}
+
+
+.windSpeeds{
+    /* background-color: chartreuse; */
+}
+
+.windDirections{
+    /* background-color: cornflowerblue; */
+}
+

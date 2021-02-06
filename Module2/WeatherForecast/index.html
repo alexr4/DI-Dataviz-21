@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWF : Paris Weather Forecast</title>
+    <link rel="stylesheet" href="./CSS/reset.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="element">
+            <div class="place widget">
+                <div id="Maintitle" class="widget-inner">
+                    <h1 id="localisation"></h1>
+                    <h2>Weather Forecast</h2>
+                </div>
+                <div id="timeline" class="widget-inner">
+                    <div id="startingDay"></div>
+                    <div id="divider">→</div>
+                    <div id="endDay"></div>
+                </div>
+            </div>
+        </div>
+        <div class="element">
+            <div class="forecast widget">
+                <div class="left widget-inner">
+                    <h3>Dates</h3>
+                    <div id="dates"></div>
+                </div>
+                <div class="right widget-inner">
+                    <h3>Weather</h3>
+                    <div id="weather"></div>
+                </div>
+            </div>
+        </div>
+        <div class="element">
+            <div class="sunrisesSunsets widget" id="sunrisesSunsets">
+                <!--<canvas id="sunrisesSunsetsCanvas"></canvas>-->
+                <div id="title" class="widget-inner">
+                    <h3>Lever du soleil</h3>
+                    <h3>Coucher du soleil</h3>
+                </div>
+            </div>
+        </div>
+        <div class="element">
+            <div class="temperatures widget">
+                <canvas id="temperaturesCanvas"></canvas>
+                <div id="title" class="widget-inner">
+                    <h3>Températures</h3>
+                </div>
+            </div>
+        </div>
+        <div class="element">
+            <div class="windSpeeds widget" id="windSpeeds">
+                <!--<canvas id="windSpeedsCanvas"></canvas>-->
+                <div id="title" class="widget-inner">
+                    <h3>Vitesse du vent</h3>
+                </div>
+            </div>
+        </div>
+        <div class="element">
+            <div class="windDirections widget" id ="windDirections">
+                <!--<canvas id="windDirectionsCanvas"></canvas>-->
+                <div id="title" class="widget-inner">
+                    <h3>Direction du vent</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./JS/OWMToken.js"></script>
+    <script src="./JS/Graph.js"></script>
+    <script src="./JS/DataViz.js"></script>
+    <script src="./JS/GrabData.js"></script>
+</body>
+</html>
