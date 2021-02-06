@@ -7,7 +7,7 @@ let appid           = "&appid="+token;
 
 let request             = apiURL + geolocation + exclude + units + lang + appid;
 
-let RGCApiURL           = "http://api.openweathermap.org/geo/1.0/reverse?";
+let RGCApiURL           = "https://api.openweathermap.org/geo/1.0/reverse?";
 let reverseGeoCoding    = RGCApiURL + geolocation + appid;
 
 //Location as Name
