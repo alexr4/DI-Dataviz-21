@@ -1,6 +1,7 @@
 # DI-Dataviz-21
 Datavisualization course syllabus @campuslfi (2021)
 Author : @alexr4 https://arivaux.com/2016/
+Link : https://alexr4.github.io/IxD-Dataviz-21/
 
 ## Objectif du cours
 L'accès, la consultation et l'utilisation des données font aujourd'hui partie intégrante de la société et ses enjeux. Que ce soit améliorer un service, archiver des informations, ou les analyser ; les données sont désormais une composante indispensable des métiers du design qui cherchent à les comprendre et a en dessiner les patterns. Avec celles-ci vient la visualisation de donnée, du simple bar chart aux visualisations non-triviales, elles permettent une approche et une étude de ces données par la mise en place et l'utilisation d'un langage graphique dédié.
