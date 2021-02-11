@@ -119,7 +119,7 @@ async function LoadData(request){
 function convertUnixTimeToFullDate(unix){
     let jsdate          = new Date(unix * 1000);
     const months        = ['Jan','Fev','Mars','Avr','Mai','Juin','Juil','Aout','Sept','Oct','Nov','Dec'];
-    const days          = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'];
+    const days          = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
 
     let year            = jsdate.getFullYear();
     let monthNumber     = jsdate.getMonth();
