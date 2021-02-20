@@ -3,10 +3,10 @@
 * Use a command/console app : powershell, VSCode, Cmd, getBash...
 
 # What is Node
-* Node is a Javascript runtime : a way to run jhavascript outside the browser
+* Node is a Javascript runtime : a way to run javascript outside the browser
 
 # Objectif
-* create a server which handle/save the data
+* create a server which handles/saves the data
 * use a node package (like a library but for node). Package handles a lot a functionnality whithout the necessity of writting it. In this we will use Express https://expressjs.com/fr/ and NeDB https://github.com/louischatriot/nedb
 * package.json, the configuration file, is needed to use NPM. This JSON file handles all the meta information of the project
 * * use ```npm init``` to generate the based package.json file
