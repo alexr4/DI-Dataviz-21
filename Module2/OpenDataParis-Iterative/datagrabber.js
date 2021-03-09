@@ -15,6 +15,7 @@ LoadData(request)
     })
 
 async function LoadData(dataURL){
+    console.log("Loading... please wait")
     const response  = await fetch(dataURL);
     const rawData   = await response.json();
 
