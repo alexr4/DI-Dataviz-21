@@ -10,6 +10,7 @@ let facetrequest        = "&facet=";
 let facets              = facetrequest+"type_de_document"+facetrequest+"auteur";
 
 let request             = opendataparisURL+version+question+datasetID+rows+sort+facets;
+console.log(request);
 
 //shows a top ten book/auteur
 //Top ten auteurs (with  multiple book) how many title are book per authors
