@@ -8,8 +8,9 @@ const database  = new Datastore('database.db');//créer la base de donnée et d�
 database.loadDatabase(); //charge la base de donnée existante. Si celle-ci n'existe pas, cela créer le fichier
 
 //l'application écoute ce qu'il se passe sur le port 3333
-app.listen(3333, function(){
-    console.log('listening at port 3333');
+const port = process.env.PORT || 3333;
+app.listen(port, function(){
+    console.log(`listening at port ${port}`);
 })
 
 //on autorise l'application a donner l'accès au dossier static public depuis l'exterieur
