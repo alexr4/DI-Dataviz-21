@@ -28,7 +28,7 @@ function Walker(position, target, radius, speed = 10){
     }
 
     this.check = function(others){
-        for(let i=0; i<others.length; i++){
+        for(let i=others.length-1; i>=0; i--){
             let d = this.distSquared(others[i].position, this.position);
             if(d < this.radius * this.radius + others[i].radius * others[i].radius)
             {

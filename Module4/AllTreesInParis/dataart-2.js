@@ -36,6 +36,9 @@ let radius  = 4;
 let walkers = [];
 let batch;
 let rndGenre;
+let maxCircDist;
+let greenDark;
+let greenLight;
 
 /**
  * in the preload fuinction we will make the request for the data
@@ -75,6 +78,15 @@ function setup(){
     batch       = floor((genres[rndGenre].count-1) * .15);
     addRandomWalkers(batch);
 
+    background('#F2F2F2');
+    
+    maxCircDist     = height * 0.75;
+    greenDark       = color('#18594D');//'#18594D');
+    greenLight      = color('#8ABFA6');//0, 0, 255);//'#4F8C6F');
+    stroke(greenLight)
+    noFill()
+    circle(width/2, height/2, maxCircDist);
+
 }
 
 function addRandomWalkers(maxWalker){
@@ -90,10 +102,18 @@ function addRandomWalkers(maxWalker){
  * The draw loop handle the data art
  */
 function draw(){
-    background('#F2F2F2');
+    noStroke()
+    strokeWeight(1)
+    fill('#F2F2F2')
+    rect(0, 0, width, 100)
+    rect(0, height-100, width, 100)
     fill(0)
+    textAlign(LEFT)
     text(genres[rndGenre].name+": "+genres[rndGenre].count, 10, 50)
-    text("points: "+points.length+" | batch: "+batch, 10, height - 10)
+    text("points: "+points.length+" | walkers: "+walkers.length+" | batch: "+batch, 10, height - 10)
+    textAlign(RIGHT)
+    text(round(frameRate()), width-10, 50)
+
 
     if(walkers.length == 0 && points.length < genres[rndGenre].count){
         if(points.length + batch > genres[rndGenre].count){
@@ -104,7 +124,6 @@ function draw(){
     }
     
     noStroke();
-    fill('#D94A4A')
     for(let i=0; i<walkers.length; i++){
         let walker = walkers[i];
         if(!walker.stuck){
@@ -114,9 +133,17 @@ function draw(){
             if(!walker.added){
                 points.push(new Walker(walker.position, walker.target, walker.radius));
                 walker.added = true;
+                
+                let normDist    = dist(walker.position.x, walker.position.y, width/2, height/2) / (maxCircDist * 0.5);
+                normDist        = constrain(normDist, 0, 1.0);
+                let sizeScale   = lerp(0.9, 0.2, normDist);
+
+                let newColor    = lerpColor(greenDark, greenLight, normDist);
+                stroke(newColor)
+                strokeWeight(walker.radius * 2 * sizeScale)
+                point(walker.position.x, walker.position.y)
             }
         }
-        circle(walker.position.x, walker.position.y, walker.radius * 2)
     }
 
     //clean walker
@@ -124,28 +151,6 @@ function draw(){
         if(walkers[i].added){
             walkers.splice(i, 1)
         }
-    }
-
-    let maxCircDist     = height * 0.75;
-    let greenDark       = color('#18594D');//'#18594D');
-    let greenLight      = color('#8ABFA6');//0, 0, 255);//'#4F8C6F');
-
-    stroke(greenLight)
-    noFill()
-    circle(width/2, height/2, maxCircDist);
-
-    noStroke();
-    // noFill()
-    //draw all points
-    for(let i=0; i<points.length; i++){
-        let point       = points[i];
-        let normDist    = dist(point.position.x, point.position.y, width/2, height/2) / (maxCircDist * 0.5);
-        normDist        = constrain(normDist, 0, 1.0);
-        let sizeScale   = lerp(0.9, 0.2, normDist);
-
-        let newColor    = lerpColor(greenDark, greenLight, normDist);
-        fill(newColor)
-        circle(point.position.x, point.position.y, point.radius * 2 * sizeScale)
     }
 }
 
