@@ -189,11 +189,11 @@ Votre projet devra se focaliser sur l'aspect graphique de la donnée et non sa c
 À partir des connaissances acquises, imaginer un projet complet de datavisualisation.
 Votre projet pourra avoir une portée d'information, social ou artistique.
 
-Il devra comporter plusieurs partie dont : 
-* Récupération de donnée : 
+Il devra comporter plusieurs parties dont : 
+* Récupération de données : 
 * * Par l'utilisateur via une interface (un à plusieurs utilisateurs)
 * * Via des API diverses 
-* Visualisation de données permmetant de comprendre le projet et ses différents points de vue
+* Visualisation de données permetant de comprendre le projet et ses différents points de vue
 
 Votre projet devra fonctionner en ligne et être accessible à tout utilisateur. 
 Il sera également developpé de manière responsive.
