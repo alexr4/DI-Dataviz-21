@@ -184,28 +184,8 @@ Votre projet devra se focaliser sur l'aspect graphique de la donnée et non sa c
 
 #### Présentation des travaux et critiques __19 Mai 2021__
 
-### Projet Long
-#### Sujet :
-À partir des connaissances acquises, imaginer un projet complet de datavisualisation.
-Votre projet pourra avoir une portée d'information, social ou artistique.
+### Projet Long : https://github.com/alexr4/IxD-Dataviz-21/blob/main/ProjetDeFinDeCycle.md
 
-Il devra comporter plusieurs parties dont : 
-* Récupération de données : 
-* * Par l'utilisateur via une interface (un à plusieurs utilisateurs)
-* * Via des API diverses 
-* Visualisation de données permetant de comprendre le projet et ses différents points de vue
-
-Votre projet devra fonctionner en ligne et être accessible à tout utilisateur. 
-Il sera également developpé de manière responsive.
-Vous apporterez un soin particulier à l'éthique de la data, à la pertinence de votre sujet, et au design.
-Vous récupérerez des données auprès de divers utilisateur afin de créer votre visulisation
-
-#### Sessions
-* 19 Mai 2021 AM
-* 03 Juin 2021 AM
-* 18 Juin 2021 AM
-
-#### Présentation **18 Juin 2021 PM**
 
 ## Resources (non triés)
 ### Semiologie de la data
