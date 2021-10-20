@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML Http Request</title>
+</head>
+<body>
+    <script>
+        let request = "../xml/example.xml";
+
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+            console.log(this.readyState);
+            if(this.readyState == 4 && this.status == 200){
+                //check the xml nodes
+                console.log(xhttp.responseXML);
+                let data = xhttp.responseXML;
+                let foods = data.getElementsByTagName("food")
+
+                for(let i=0; i<foods.length; i++){
+                    for(let j=0; j<foods[i].children.length; j++){
+                        let value = foods[i].children[j].textContent;
+                        console.log(value);
+                    }
+                }
+            }
+        }
+
+        xhttp.open("GET", request, true);
+        xhttp.send();
+
+    </script>
+</body>
+</html>
