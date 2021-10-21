@@ -73,6 +73,10 @@ LoadData(request)
         console.log(authors[0])
 
         // * Sort and filter
+        //.join() aggregate all the values of the array into one value
+        let creators = authors.join(", ");
+        console.log(creators);
+
         // .every() check if all the element of an array validate a condition
         const minmaxdate = 1500;
         const isBelowThreshold = (value) => value < minmaxdate;

@@ -16,7 +16,7 @@ let types           = [
     "video"
 ];
 let collapse    = "collapsing=true";
-let maxRecord   = "maximumRecords=100";
+let maxRecord   = "maximumRecords=50";
 
 let request = gallicaAPIURL + cql + separator + operator[0] + separator + "Molière" + and + collapse + and + maxRecord;
 
@@ -27,6 +27,7 @@ LoadData(request)
 
         let records = data.getElementsByTagName("srw:record");
         let target  = document.getElementById("datadisplay");
+        console.log(`Data has ${records.length} records`)
         
         for(let i=0; i<records.length; i++){
             let element = records[i];
@@ -43,8 +44,10 @@ LoadData(request)
             container.id        = `record${i}`;
             container.className = "srwrecord";
 
-            let imgcontainer    = document.createElement("div");
-            let infocontainer   = document.createElement("div");
+            let imgcontainer        = document.createElement("div");
+            imgcontainer.className  = "thumbnail"
+            let infocontainer       = document.createElement("div");
+            infocontainer.className = "infos"
 
             //img
             let img             = document.createElement("img");
@@ -56,7 +59,7 @@ LoadData(request)
             let h1              = document.createElement("h1");
             h1.innerHTML        = `${title}`;
             
-            let datepublish     = date.length > 0 ? date[0].textContent : "Date is unknown";
+            let datepublish     = date.length > 0 ? `⟶ ${date[0].textContent}` : "Date is unknown";
             // let datepublish = "Date is unknown";
             // if(data.length>0){
             //     datepublish = date[0].textContent;
@@ -65,13 +68,13 @@ LoadData(request)
             h2.innerHTML        = `${datepublish}`;
 
             let creatorp        = document.createElement("p");
-            creatorp.innerHTML  = `Creators: ${AggregateDataAsString(creators)}`;
+            creatorp.innerHTML  = `<em>Creators:</em> ${AggregateDataAsString(creators)}`;
 
             let contribp        = document.createElement("p");
-            contribp.innerHTML  = `Contributors: ${AggregateDataAsString(contributors)}`;
+            contribp.innerHTML  = `<em>Contributors:</em> ${AggregateDataAsString(contributors)}`;
 
             let publishp        = document.createElement("p");
-            publishp.innerHTML  = `Publisher: ${AggregateDataAsString(publishers)}`;
+            publishp.innerHTML  = `<em>Publisher:</em> ${AggregateDataAsString(publishers)}`;
 
             infocontainer.appendChild(h1);
             infocontainer.appendChild(h2);
