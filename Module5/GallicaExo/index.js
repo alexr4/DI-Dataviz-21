@@ -16,85 +16,118 @@ let types           = [
     "video"
 ];
 let collapse    = "collapsing=true";
-let maxRecord   = "maximumRecords=50";
+let start       = 0;
+let max         = 50;
+let startRecord = "startRecord=";
+let maxRecord   = "maximumRecords=";
+let maxLengthRecord;
 
-let request = gallicaAPIURL + cql + separator + operator[0] + separator + "Molière" + and + collapse + and + maxRecord;
 
-LoadData(request)
-    .then(data => {
-        console.log(request); 
-        console.log(data);
+SetPage();
+function SetPage(){
+    let target          = document.getElementById("datadisplay");
+    target.innerHTML    = "";
 
-        let records = data.getElementsByTagName("srw:record");
-        let target  = document.getElementById("datadisplay");
-        console.log(`Data has ${records.length} records`)
-        
-        for(let i=0; i<records.length; i++){
-            let element = records[i];
+    let request = gallicaAPIURL + cql + separator + operator[0] + separator + "Molière" + and + collapse + and + startRecord + start + and + maxRecord+max;
 
-            let imageurl    = element.getElementsByTagName("medres")[0].textContent;
-            let title       = element.getElementsByTagName("dc:title")[0].textContent;
-            let date        = element.getElementsByTagName("dc:date");
+    LoadData(request)
+        .then(data => {
+            console.log(request); 
+            console.log(data);
 
-            let creators        = element.getElementsByTagName("dc:creator");
-            let contributors    = element.getElementsByTagName("dc:contributor");
-            let publishers      = element.getElementsByTagName("dc:publisher");
-
-            let container       = document.createElement("div");
-            container.id        = `record${i}`;
-            container.className = "srwrecord";
-
-            let imgcontainer        = document.createElement("div");
-            imgcontainer.className  = "thumbnail"
-            let infocontainer       = document.createElement("div");
-            infocontainer.className = "infos"
-
-            //img
-            let img             = document.createElement("img");
-            img.src             = imageurl;
-            img.alt             = `Cover of ${title}`
-            imgcontainer.appendChild(img);
-
-            //info
-            let h1              = document.createElement("h1");
-            h1.innerHTML        = `${title}`;
+            let records = data.getElementsByTagName("srw:record")
+            console.log(`Data has ${records.length} records`)
+            maxLengthRecord = Number(data.getElementsByTagName("srw:numberOfRecords")[0].textContent);
+            console.log(start, max, maxLengthRecord)
             
-            let datepublish     = date.length > 0 ? `⟶ ${date[0].textContent}` : "Date is unknown";
-            // let datepublish = "Date is unknown";
-            // if(data.length>0){
-            //     datepublish = date[0].textContent;
-            // }
-            let h2              = document.createElement("h2");
-            h2.innerHTML        = `${datepublish}`;
+            for(let i=0; i<records.length; i++){
+                let element = records[i];
 
-            let creatorp        = document.createElement("p");
-            creatorp.innerHTML  = `<em>Creators:</em> ${AggregateDataAsString(creators)}`;
+                let imageurl    = element.getElementsByTagName("medres")[0].textContent;
+                let title       = element.getElementsByTagName("dc:title")[0].textContent;
+                let date        = element.getElementsByTagName("dc:date");
 
-            let contribp        = document.createElement("p");
-            contribp.innerHTML  = `<em>Contributors:</em> ${AggregateDataAsString(contributors)}`;
+                let container       = document.createElement("div");
+                container.id        = `record${i}`;
+                container.className = "srwrecord";
 
-            let publishp        = document.createElement("p");
-            publishp.innerHTML  = `<em>Publisher:</em> ${AggregateDataAsString(publishers)}`;
+                let imgcontainer        = document.createElement("div");
+                imgcontainer.className  = "thumbnail"
+                let infocontainer       = document.createElement("div");
+                infocontainer.className = "infos"
 
-            infocontainer.appendChild(h1);
-            infocontainer.appendChild(h2);
-            infocontainer.appendChild(creatorp);
-            infocontainer.appendChild(contribp);
-            infocontainer.appendChild(publishp);
+                //img
+                let img             = document.createElement("img");
+                img.src             = imageurl;
+                img.alt             = `Cover of ${title}`
+                imgcontainer.appendChild(img);
 
-            container.appendChild(imgcontainer);
-            container.appendChild(infocontainer);
-            target.appendChild(container);
-        };
-    })
+                //info
+                let h1              = document.createElement("h1");
+                h1.innerHTML        = `${title}`;
+                
+                let datepublish     = date.length > 0 ? `⟶ ${date[0].textContent}` : "Date is unknown";
+                // let datepublish = "Date is unknown";
+                // if(data.length>0){
+                //     datepublish = date[0].textContent;
+                // }
+                let h2              = document.createElement("h2");
+                h2.innerHTML        = `${datepublish}`;
 
-function AggregateDataAsString(data){
-    let aggregate  = "";
-    Array.from(data).forEach(value => {
-        aggregate += `${value.textContent}<br>`;
-    })
+                infocontainer.appendChild(h1);
+                infocontainer.appendChild(h2);
 
-    return aggregate;
+                appendDataToHtml(element, "dc:creator", "Creators", infocontainer);
+                appendDataToHtml(element, "dc:contributor", "Contributors", infocontainer);
+                appendDataToHtml(element, "dc:publisher", "Publisher", infocontainer);
+                appendDataToHtml(element, "dc:source", "Publisher", infocontainer);
+                appendDataToHtml(element, "dc:format", "Format", infocontainer);
+
+                let values        = element.getElementsByTagName("dc:type");
+                // values            = Array.from(values).shift();
+                if(values.length > 0 && values[1] != undefined){
+                    let valuesp        = document.createElement("p");
+                    valuesp.innerHTML  = `<em>Type:</em> ${values[1].textContent}`;
+                    infocontainer.appendChild(valuesp);
+                }
+
+                let link            = element.getElementsByTagName("dc:identifier");
+                if(link.length > 0){
+                    let valuesp        = document.createElement("a");
+                    valuesp.href       = link[0].textContent;
+                    valuesp.target     = "_Blank"; 
+                    valuesp.innerHTML  = `<em>Voir sur Gallica</em>`;
+                    infocontainer.appendChild(valuesp);
+                }
+            
+
+                container.appendChild(imgcontainer);
+                container.appendChild(infocontainer);
+                target.appendChild(container);
+
+                //check if next/prev are available
+                let next = document.getElementById("next");
+                let prev = document.getElementById("previous");
+
+                if(start == 0) prev.style.display = "none"
+                else prev.style.display = "inline";
+                
+                console.log(start + records.length)
+                if(start + records.length >= maxLengthRecord) next.style.display = "none"
+                else next.style.display = "inline"                
+            };
+        })
+        .catch(e => console.error(e))
+}
+
+function appendDataToHtml(xml, dctarget, header, target){
+    let values        = xml.getElementsByTagName(dctarget);
+    if(values.length > 0){
+        let arr            = Array.from(values).map(element => element.textContent);
+        let valuesp        = document.createElement("p");
+        valuesp.innerHTML  = `<em>${header}:</em> ${arr.join('<br>')}`;
+        target.appendChild(valuesp);
+    }
 }
 
 async function LoadData(request){
@@ -102,4 +135,18 @@ async function LoadData(request){
     const rawdata   = await response.text();
     const xml       = await new window.DOMParser().parseFromString(rawdata, "text/xml");
     return xml;
+}
+
+function Next(){
+    if(start < maxLengthRecord)
+        start += max;
+
+    SetPage();
+}
+
+function Previous(){
+    if(start >= max)
+        start -= max;
+    
+    SetPage();
 }
